@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-medical-bg text-medical-text antialiased;
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-medical-border;
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl p-6 shadow-medical-card transition-all duration-300 hover:shadow-glow-primary hover:border-medical-primary/30;
+  }
+
+  .btn-medical {
+    @apply px-6 py-3 rounded-full font-bold transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .btn-medical-primary {
+    @apply btn-medical bg-medical-primary text-white hover:opacity-90 shadow-medical-soft hover:shadow-glow-primary;
+  }
+
+  .btn-medical-outline {
+    @apply btn-medical border border-medical-primary text-medical-primary hover:bg-medical-primary/5;
+  }
+
+  /* Compatibility aliases */
+  .btn-bipsync { @apply btn-medical; }
+  .btn-bipsync-primary { @apply btn-medical-primary; }
+  .btn-bipsync-outline { @apply btn-medical-outline; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-medical-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full border-2 border-medical-bg hover:bg-slate-400 transition-colors;
+}
+
+.medical-grid {
+  background-image: 
+    linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hex-bg {
+  @apply medical-grid;
+}
